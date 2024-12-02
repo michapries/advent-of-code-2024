@@ -7,15 +7,14 @@ def get_day():
     return datetime.datetime.today().day
 
 
-def get_input():
-    with open(f'./day{get_day()}/input.txt', 'r') as input:
-        return input.readlines()
-    
-
-def get_testinput(task):
-    with open(f'./day{get_day()}/testinput{task}.txt', 'r') as input:
-        return input.readlines()
-
+def get_input(testinput=0):
+    if testinput == 0:
+        with open(f'./day{get_day()}/input.txt', 'r') as input:
+            return input.readlines()
+    else:
+        with open(f'./day{get_day()}/testinput{testinput}.txt', 'r') as input:
+            return input.readlines()
+            
 
 def part1():
     return
