@@ -8,12 +8,9 @@ def get_day():
 
 
 def get_input(testinput=0):
-    if testinput == 0:
-        with open(f'./day{get_day()}/input.txt', 'r') as input:
-            return input.readlines()
-    else:
-        with open(f'./day{get_day()}/testinput{testinput}.txt', 'r') as input:
-            return input.readlines()
+    filename = 'input.txt' if testinput == 0 else f'testinput{testinput}.txt'
+    with open(f'./day{get_day()}/{filename}', 'r') as input:
+        return input.readlines()
             
 
 def part1():
