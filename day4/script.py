@@ -1,7 +1,6 @@
 # Use "regex" package instead of standard "re" package because it supports overlaps.
 import regex as re
 
-
 def get_input(testinput=0):
     filename = 'input.txt' if testinput == 0 else f'testinput{testinput}.txt'
     with open(f'./day4/{filename}', 'r') as input:
