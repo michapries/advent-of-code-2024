@@ -17,11 +17,11 @@ def main(is_part1):
     middle_sum = 0
 
     for update in updates:
-        relevant_ordering = [(k, v) for k, v in ordering if k in update and v in update]
+        relevant_ordering = [k for k, v in ordering if k in update and v in update]
                 
         # Sort numbers by how often they occur in the relevant orderings.
         # Does not include the number that is not in front of any other number (which would have a count of 0).
-        sorted_counts = Counter([k for k, v in relevant_ordering]).most_common()
+        sorted_counts = Counter(relevant_ordering).most_common()
         sorted_nums = [c[0] for c in sorted_counts]
 
         if is_part1 and update[:-1] == sorted_nums:
